@@ -12,6 +12,10 @@ class GroupSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // グループを作成
+        $group = Group::create(['name' => 'Sample Group', 'created_by' => 11]);
+        
+        // ユーザーをグループに追加
+        $group->users()->attach(11);
     }
 }
