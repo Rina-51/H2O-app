@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\Post;
+ 
 class PostSeeder extends Seeder
 {
     /**
@@ -12,15 +13,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        // 例として、グループに関連する投稿を作成
-        $group = Group::first(); // 最初のグループを取得
-
-        if ($group) {
-            Post::create([
-                'user_id' => 11, // テストユーザーのID
-                'group_id' => $group->id,
-                'content' => 'This is a sample post.',
-            ]);
-        }
+        Post::factory()->count(50)->create();
+       
     }
 }

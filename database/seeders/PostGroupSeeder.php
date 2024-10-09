@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\PostGroup;
 
 class PostGroupSeeder extends Seeder
 {
@@ -12,6 +13,7 @@ class PostGroupSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        PostGroup::factory()->count(60)->create();
+
     }
 }

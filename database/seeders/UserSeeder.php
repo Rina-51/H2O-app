@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->count(10)->create();
+        
         
         DB::table('users')->insert([
             'name' => "test",
@@ -24,6 +24,10 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('testtest'),
             'remember_token' => Str::random(10),
-         ]);
+            
+        ]);
+         
+        User::factory()->count(10)->create();
+         
     }
 }

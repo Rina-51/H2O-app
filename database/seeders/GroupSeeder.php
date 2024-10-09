@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class GroupSeeder extends Seeder
 {
@@ -12,10 +14,25 @@ class GroupSeeder extends Seeder
      */
     public function run(): void
     {
-        // グループを作成
-        $group = Group::create(['name' => 'Sample Group', 'created_by' => 11]);
+        DB::table('groups')->insert([
+            'name' => "GenreLock",
+            'status' => 2,
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+        ]);
         
-        // ユーザーをグループに追加
-        $group->users()->attach(11);
+        DB::table('groups')->insert([
+            'name' => "広報係",
+            'status' => 1,
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+        ]);
+        
+        DB::table('groups')->insert([
+            'name' => "全体",
+            'status' => 3,
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+        ]);
     }
 }
