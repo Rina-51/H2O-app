@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
+    
+    public function users()   
+    {
+        return $this->belongsToMany(User::class);  
+    }
+
+    public function posts()   
+    {
+        return $this->belongsToMany(Post::class);  
+    }
+
+    public function schedules()   
+    {
+        return $this->belongsToMany(Schedule::class);  
+    }
+
 }
