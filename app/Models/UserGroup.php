@@ -9,5 +9,4 @@ class UserGroup extends Model
 {
     use HasFactory;
     
-
 }
